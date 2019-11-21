@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gmail.sas.newsdigitalnomads">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".presentation.screen.main.MainActivity"
+            android:theme="@style/AppTheme.Launcher">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name=".JobSchedulerService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+        android:exported="true"/>
+        <service android:name=".jobScheduler.JobIntentService" />
+        <service android:name=".jobScheduler.JobServiceScheduler" />
+    </application>
+
+</manifest>
